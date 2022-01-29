@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bean_bakery_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 00:01+0000\n"
+"PO-Revision-Date: 2022-01-19 00:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bean_bakery_module
+#: model:ir.model,name:bean_bakery_module.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: bean_bakery_module
+#: model_terms:ir.actions.act_window,help:bean_bakery_module.product_menu_act
+msgid "Create a new product"
+msgstr "Tạo sản phẩm mới"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__create_uid
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__create_date
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__create_date
+msgid "Created on"
+msgstr "Tạo vào ngày"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__display_name
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__display_name
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: bean_bakery_module
+#: model:ir.model,name:bean_bakery_module.model_res_country_district
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__district_id
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_partner__district_id
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_users__district_id
+msgid "District"
+msgstr "Quận/Huyện"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__name
+msgid "District name"
+msgstr "Tên Quận/Huyện"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__id
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__id
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district____last_update
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward____last_update
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__write_uid
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__write_date
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:res.groups,name:bean_bakery_module.group_librarian
+msgid "Librarians"
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:ir.actions.act_window,name:bean_bakery_module.product_menu_act
+#: model:ir.ui.menu,name:bean_bakery_module.products_base_menu
+msgid "Products"
+msgstr "Sản phẩm"
+
+#. module: bean_bakery_module
+#: model:res.country.district,name:bean_bakery_module.obj0
+msgid "Quận  1"
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_district__state_id
+msgid "State"
+msgstr "Tỉnh/TP"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_partner__ward_id
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_users__ward_id
+msgid "Ward"
+msgstr "Phường/Xã"
+
+#. module: bean_bakery_module
+#: model:ir.model.fields,field_description:bean_bakery_module.field_res_country_ward__name
+msgid "Ward name"
+msgstr "Tên Phường/Xã"
+
+#. module: bean_bakery_module
+#: model_terms:ir.actions.act_window,help:bean_bakery_module.product_menu_act
+msgid ""
+"You must define a product for everything you sell or purchase,\n"
+"                whether it's a storable product, a consumable or a service."
+msgstr ""
+
+#. module: bean_bakery_module
+#: model:ir.model,name:bean_bakery_module.model_res_country_ward
+msgid "ward"
+msgstr ""
