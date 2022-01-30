@@ -7,10 +7,10 @@ from odoo import models, fields, api
 class ResPartner(models.Model):
     _inherit = "res.partner"
     
-    city_id = fields.Many2one( comodel_name='res.country.city',string='City',domain="[('state_id', '=', state_id)]")
-    district_id = fields.Many2one( comodel_name='res.country.district',string='District',domain="[('city_id', '=', city_id)]")
+    # city_id = fields.Many2one( comodel_name='res.country.city',string='City',domain="[('state_id', '=', state_id)]")
+    district_id = fields.Many2one( comodel_name='res.country.district',string='District')
     ward_id = fields.Many2one(comodel_name='res.country.ward',string='Ward',domain="[('district_id', '=', district_id)]")
-    city =fields.Char(related='city_id.name', store=True)
+    # city =fields.Char(related='city_id.name', store=True)
     
     def _makeaddress(self,ward_name = "", district_name = ""):
         return (ward_name + ", " + district_name)

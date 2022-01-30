@@ -28,7 +28,7 @@
             <meta name="theme-color" t-att-content="pwa_theme_color" />
         </xpath>
     </template>
-    <template
+    <!-- <template
         id="assets_backend"
         name="web service worker assets"
         inherit_id="web.assets_backend"
@@ -47,5 +47,5 @@
                 src="/web_pwa_oca/static/src/js/main.js"
             />
         </xpath>
-    </template>
+    </template> -->
 </odoo>

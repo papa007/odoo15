@@ -9,4 +9,5 @@ class Ward(models.Model):
     code = fields.Char(string="Ward Code")
     slug = fields.Char(string="Ward Code ID")
     district_id = fields.Many2one('res.country.district', string='District')
+    zipcode = fields.Char(string='Zipcode',default='700000')
     

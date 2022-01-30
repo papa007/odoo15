@@ -7,15 +7,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <!-- <field name="street2" position="attributes">
-                <attribute name="class">oe_read_only</attribute>
-            </field> -->
-            <field name="city" position="attributes">
-                <attribute name="class">d-none</attribute>
-            </field>
+           
             <field name="state_id" position="after">
                 
-                    <field name="city_id" options='{"no_open": True}' class="oe_edit_only"/>
             
                     <field name="district_id" options='{"no_open": True}' class="oe_edit_only"/>
                 

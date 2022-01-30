@@ -18,4 +18,11 @@
     "depends": ["web", "mail"],
     "data": ["templates/assets.xml", "views/res_config_settings_views.xml"],
     "images": ["static/description/pwa.png"],
+    'assets': {
+        'web.assets_backend': [
+            "/web_pwa_oca/static/src/js/pwa_manager.js",
+            "/web_pwa_oca/static/src/js/webclient.js",
+            "/web_pwa_oca/static/src/js/main.js"
+        ],
+    },
 }

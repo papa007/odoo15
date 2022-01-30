@@ -18,6 +18,7 @@
     """,
 
     'author': "Bean Bakery",
+    'license':"LGPL-3",
     'website': "http://www.beanbakery.com",
 
     # Categories can be used to filter modules in modules listing
@@ -27,24 +28,29 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale'],
+    'depends': ['base','website','sale','web_responsive','web_pwa_oca','beanbakery_address'],
 
     # always loaded
     'data': [
         # 'views/demo_library/templates.xml',
         'views/widgets/backend/qr_widget/template.xml',
         'views/product/product.xml',
-        'views/vn_address/res_partner.xml',
+        #'views/vn_address/res_partner.xml',
         'views/sale_order/sale_order.xml',
         'views/invoiceQR/invoice_template.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
-        'data/vn_address/res.country.city.csv',
-        'data/vn_address/res.country.district.csv',
-        'data/vn_address/res.country.ward.csv'
+        #'data/vn_address/res.country.city.csv',
+        #'data/vn_address/res.country.district.csv',
+        #'data/vn_address/res.country.ward.csv'
        
         
     ],
+    'assets': {
+        'web.assets_backend': [
+            'pos_address/static/src/js/yourjs.js',
+        ],
+    },
     # only loaded in demonstration mode
     'demo': [
          #'data/master_data.xml'

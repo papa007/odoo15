@@ -1,4 +1,4 @@
-local
-log
+.local
+.log
 beanbakery-venv
 *.pyc
