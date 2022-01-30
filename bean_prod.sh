@@ -1,0 +1,1 @@
+./beanbakery-venv/bin/python3 ./odoo-bin --without-demo=all -c /etc/beanbakery15.conf -d beanbakery15 
