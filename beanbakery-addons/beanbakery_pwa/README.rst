@@ -14,10 +14,10 @@ Progressive web application
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fweb-lightgray.png?logo=github
-    :target: https://github.com/OCA/web/tree/14.0/web_pwa_oca
+    :target: https://github.com/OCA/web/tree/14.0/beanbakery_pwa
     :alt: OCA/web
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/web-14-0/web-14-0-web_pwa_oca
+    :target: https://translation.odoo-community.org/projects/web-14-0/web-14-0-beanbakery_pwa
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/162/14.0
@@ -66,7 +66,7 @@ In case you previously installed `web_pwa`, run the following steps with `odoo s
 
 
 >>> from openupgradelib import openupgrade
->>> openupgrade.update_module_names(env.cr, [('web_pwa', 'web_pwa_oca')], merge_modules=False)
+>>> openupgrade.update_module_names(env.cr, [('web_pwa', 'beanbakery_pwa')], merge_modules=False)
 >>> env.cr.commit()
 
 Configuration
@@ -76,7 +76,7 @@ This module allows you to set the following parameters under settings to customi
 
 * PWA Name (defaults to "Odoo PWA")
 * PWA Short Name (defaults to "Odoo PWA")
-* PWA Icon (**SVG**) (defaults to "/web_pwa_oca/static/img/icons/odoo-logo.svg")
+* PWA Icon (**SVG**) (defaults to "/beanbakery_pwa/static/img/icons/odoo-logo.svg")
 
 To configure your PWA:
 
@@ -186,6 +186,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-eLBati| 
 
-This module is part of the `OCA/web <https://github.com/OCA/web/tree/14.0/web_pwa_oca>`_ project on GitHub.
+This module is part of the `OCA/web <https://github.com/OCA/web/tree/14.0/beanbakery_pwa>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

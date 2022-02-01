@@ -12,7 +12,7 @@ from odoo.tools.mimetypes import guess_mimetype
 
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
-    _pwa_icon_url_base = "/web_pwa_oca/icon"
+    _pwa_icon_url_base = "/beanbakery_pwa/icon"
 
     pwa_name = fields.Char(
         "Progressive Web App Name", help="Name of the Progressive Web Application"

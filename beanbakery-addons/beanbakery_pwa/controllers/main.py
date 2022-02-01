@@ -9,21 +9,24 @@ from odoo.http import Controller, request, route
 
 class PWA(Controller):
     def _get_pwa_scripts(self):
-        """Scripts to be imported in the service worker (Order is important)"""
+        """Scripts to be imported in the service worker (Order is important)
+            for odoo 15 all legacy script is in the '/web/static/src/legacy' folder
+            Due to this 
+        """
         return [
             "/web/static/lib/underscore/underscore.js",
-            "/web_pwa_oca/static/src/js/worker/jquery-sw-compat.js",
-            "/web/static/src/js/promise_extension.js",
-            "/web/static/src/js/boot.js",
-            "/web/static/src/js/core/class.js",
-            "/web_pwa_oca/static/src/js/worker/pwa.js",
+            "/beanbakery_pwa/static/src/worker/jquery-sw-compat.js",
+            "/web/static/src/legacy/js/promise_extension.js",
+            "/web/static/src/boot.js",
+            "/web/static/src/legacy/js/core/class.js",
+            "/beanbakery_pwa/static/src/worker/pwa.js",
         ]
 
     @route("/service-worker.js", type="http", auth="public")
     def render_service_worker(self):
         """Route to register the service worker in the 'main' scope ('/')"""
         return request.render(
-            "web_pwa_oca.service_worker",
+            "beanbakery_pwa.service_worker",
             {
                 "pwa_scripts": self._get_pwa_scripts(),
                 "pwa_params": self._get_pwa_params(),
@@ -48,7 +51,7 @@ class PWA(Controller):
             ]:
                 icons.append(
                     {
-                        "src": "/web_pwa_oca/static/img/icons/icon-%sx%s.png"
+                        "src": "/beanbakery_pwa/static/img/icons/icon-%sx%s.png"
                         % (str(size[0]), str(size[1])),
                         "sizes": "{}x{}".format(str(size[0]), str(size[1])),
                         "type": "image/png",
@@ -61,11 +64,11 @@ class PWA(Controller):
                 .sudo()
                 .search(
                     [
-                        ("url", "like", "/web_pwa_oca/icon"),
+                        ("url", "like", "/beanbakery_pwa/icon"),
                         (
                             "url",
                             "not like",
-                            "/web_pwa_oca/icon.",
+                            "/beanbakery_pwa/icon.",
                         ),  # Get only resized icons
                     ]
                 )
@@ -89,23 +92,24 @@ class PWA(Controller):
     def _get_pwa_manifest(self):
         """Webapp manifest"""
         config_param_sudo = request.env["ir.config_parameter"].sudo()
-        pwa_name = config_param_sudo.get_param("pwa.manifest.name", "Odoo PWA")
+        pwa_name = config_param_sudo.get_param("pwa.manifest.name", "Bean Bakery PWA")
         pwa_short_name = config_param_sudo.get_param(
-            "pwa.manifest.short_name", "Odoo PWA"
+            "pwa.manifest.short_name", "BeanBakery PWA"
         )
         pwa_icon = (
             request.env["ir.attachment"]
             .sudo()
-            .search([("url", "like", "/web_pwa_oca/icon.")])
+            .search([("url", "like", "/beanbakery_pwa/icon.")])
         )
         background_color = config_param_sudo.get_param(
-            "pwa.manifest.background_color", "#2E69B5"
+            "pwa.manifest.background_color", " #addbc5"
         )
-        theme_color = config_param_sudo.get_param("pwa.manifest.theme_color", "#2E69B5")
+        theme_color = config_param_sudo.get_param("pwa.manifest.theme_color", " #addbc5")
         return {
             "name": pwa_name,
             "short_name": pwa_short_name,
             "icons": self._get_pwa_manifest_icons(pwa_icon),
+            "id": "/web",
             "start_url": "/web",
             "display": "standalone",
             "orientation": "any",
@@ -113,7 +117,7 @@ class PWA(Controller):
             "theme_color": theme_color,
         }
 
-    @route("/web_pwa_oca/manifest.webmanifest", type="http", auth="public")
+    @route("/beanbakery_pwa/manifest.webmanifest", type="http", auth="public")
     def pwa_manifest(self):
         """Returns the manifest used to install the page as app"""
         return request.make_response(

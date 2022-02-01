@@ -28,7 +28,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','website','sale','web_responsive','web_pwa_oca','beanbakery_address'],
+    'depends': ['base','website','sale','web_responsive','beanbakery_pwa','beanbakery_address'],
 
     # always loaded
     'data': [

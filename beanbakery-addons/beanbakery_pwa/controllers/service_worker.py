@@ -35,7 +35,7 @@ class ServiceWorker(PWA):
     JS_PWA_MAIN = """
         self.importScripts(...{pwa_scripts});
 
-        odoo.define("web_pwa_oca.ServiceWorker", function (require) {{
+        odoo.define("beanbakery_pwa.ServiceWorker", function (require) {{
             "use strict";
 
             {pwa_requires}
@@ -50,7 +50,7 @@ class ServiceWorker(PWA):
 
     def _get_js_pwa_requires(self):
         return """
-            const PWA = require('web_pwa_oca.PWA');
+            const PWA = require('beanbakery_pwa.PWA');
         """
 
     def _get_js_pwa_init(self):
@@ -97,7 +97,7 @@ class ServiceWorker(PWA):
             event.waitUntil(self.registration.showNotification(title, options));
         """
 
-    @route("/service-worker.js", type="http", auth="public")
+    @route("/sw.js", type="http", auth="public")
     def render_service_worker(self):
         """Route to register the service worker in the 'main' scope ('/')"""
 
@@ -120,6 +120,7 @@ class ServiceWorker(PWA):
                 ),
             }
         )
+        print ('service-worker.js', sw_code)
         return request.make_response(
             sw_code,
             [

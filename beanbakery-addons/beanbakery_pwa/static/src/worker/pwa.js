@@ -8,7 +8,7 @@
  * this class is instantiated.
  */
 
-odoo.define("web_pwa_oca.PWA", function (require) {
+odoo.define("beanbakery_pwa.PWA", function (require) {
     "use strict";
 
     const OdooClass = require("web.Class");
@@ -17,6 +17,7 @@ odoo.define("web_pwa_oca.PWA", function (require) {
         // eslint-disable-next-line
         init: function (params) {
             // To be overridden
+            console.log('PWA initalizing...',params)
         },
 
         /**
@@ -24,6 +25,7 @@ odoo.define("web_pwa_oca.PWA", function (require) {
          */
         installWorker: function () {
             // To be overridden
+            console.log('SW is installing...')
             return Promise.resolve();
         },
 
@@ -32,6 +34,7 @@ odoo.define("web_pwa_oca.PWA", function (require) {
          */
         activateWorker: function () {
             // To be overridden
+            console.log('SW is activating...')
             return Promise.resolve();
         },
     });

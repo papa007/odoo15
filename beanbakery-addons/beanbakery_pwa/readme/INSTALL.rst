@@ -14,5 +14,5 @@ In case you previously installed `web_pwa`, run the following steps with `odoo s
 
 
 >>> from openupgradelib import openupgrade
->>> openupgrade.update_module_names(env.cr, [('web_pwa', 'web_pwa_oca')], merge_modules=False)
+>>> openupgrade.update_module_names(env.cr, [('web_pwa', 'beanbakery_pwa')], merge_modules=False)
 >>> env.cr.commit()

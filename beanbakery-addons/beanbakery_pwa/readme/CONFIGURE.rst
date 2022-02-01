@@ -2,7 +2,7 @@ This module allows you to set the following parameters under settings to customi
 
 * PWA Name (defaults to "Odoo PWA")
 * PWA Short Name (defaults to "Odoo PWA")
-* PWA Icon (**SVG**) (defaults to "/web_pwa_oca/static/img/icons/odoo-logo.svg")
+* PWA Icon (**SVG**) (defaults to "/beanbakery_pwa/static/img/icons/odoo-logo.svg")
 
 To configure your PWA:
 

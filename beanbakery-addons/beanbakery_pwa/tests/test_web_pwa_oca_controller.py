@@ -19,7 +19,7 @@ class TestUi(odoo.tests.HttpCase):
 
     def test_manifest_valid_json(self):
         # Call the manifest controller
-        manifest_data = self.url_open("/web_pwa_oca/manifest.webmanifest")
+        manifest_data = self.url_open("/beanbakery_pwa/manifest.webmanifest")
         # should be valid json
         manifest_content_str = manifest_data.content.decode("utf-8")
         json.loads(manifest_content_str)
@@ -33,7 +33,7 @@ class TestUi(odoo.tests.HttpCase):
         self.res_config_settings_obj.set_values()
 
         # Call the manifest controller
-        manifest_data = self.url_open("/web_pwa_oca/manifest.webmanifest")
+        manifest_data = self.url_open("/beanbakery_pwa/manifest.webmanifest")
         manifest_content_str = manifest_data.content.decode("utf-8")
         manifest_content = json.loads(manifest_content_str)
 
@@ -42,14 +42,14 @@ class TestUi(odoo.tests.HttpCase):
         # icon should remain the default one
         self.assertEqual(
             manifest_content["icons"][0]["src"],
-            "/web_pwa_oca/static/img/icons/icon-128x128.png",
+            "/beanbakery_pwa/static/img/icons/icon-128x128.png",
         )
         self.assertEqual(manifest_content["icons"][0]["sizes"], "128x128")
         self.assertTrue(manifest_content["icons"][0]["type"].startswith("image/png"))
 
     def test_manifest_logo_upload(self):
         with open(
-            "%s/static/img/icons/odoo_logo.svg" % get_resource_path("web_pwa_oca"), "rb"
+            "%s/static/img/icons/odoo_logo.svg" % get_resource_path("beanbakery_pwa"), "rb"
         ) as fi:
             icon_to_send = base64.b64encode(fi.read())
 
@@ -58,11 +58,11 @@ class TestUi(odoo.tests.HttpCase):
         self.res_config_settings_obj.set_values()
 
         # Call the manifest controller
-        manifest_data = self.url_open("/web_pwa_oca/manifest.webmanifest")
+        manifest_data = self.url_open("/beanbakery_pwa/manifest.webmanifest")
         manifest_content_str = manifest_data.content.decode("utf-8")
         manifest_content = json.loads(manifest_content_str)
 
-        self.assertEqual(manifest_content["icons"][0]["src"], "/web_pwa_oca/icon.svg")
+        self.assertEqual(manifest_content["icons"][0]["src"], "/beanbakery_pwa/icon.svg")
         self.assertTrue(manifest_content["icons"][0]["type"].startswith("image/svg"))
         self.assertEqual(
             manifest_content["icons"][0]["sizes"],
@@ -70,13 +70,13 @@ class TestUi(odoo.tests.HttpCase):
         )
 
         # Get the icon and compare it
-        icon_data = self.url_open("/web_pwa_oca/icon.svg")
+        icon_data = self.url_open("/beanbakery_pwa/icon.svg")
         icon_data_bytes = base64.b64encode(icon_data.content)
         self.assertEqual(icon_data_bytes, icon_to_send)
 
     def test_png_logo_upload(self):
         with open(
-            "%s/static/img/icons/icon-512x512.png" % get_resource_path("web_pwa_oca"),
+            "%s/static/img/icons/icon-512x512.png" % get_resource_path("beanbakery_pwa"),
             "rb",
         ) as fi:
             icon_to_send = base64.b64encode(fi.read())
@@ -86,12 +86,12 @@ class TestUi(odoo.tests.HttpCase):
         self.res_config_settings_obj.set_values()
 
         # Call the manifest controller
-        manifest_data = self.url_open("/web_pwa_oca/manifest.webmanifest")
+        manifest_data = self.url_open("/beanbakery_pwa/manifest.webmanifest")
         manifest_content_str = manifest_data.content.decode("utf-8")
         manifest_content = json.loads(manifest_content_str)
 
         expected_vals = {
-            "src": "/web_pwa_oca/icon512x512.png",
+            "src": "/beanbakery_pwa/icon512x512.png",
             "sizes": "512x512",
             "type": "image/png",
         }
@@ -113,7 +113,7 @@ class TestUi(odoo.tests.HttpCase):
     def test_manifest_logo_upload_small(self):
         icon_to_send = None
         with open(
-            "%s/static/img/icons/icon-128x128.png" % get_resource_path("web_pwa_oca"),
+            "%s/static/img/icons/icon-128x128.png" % get_resource_path("beanbakery_pwa"),
             "rb",
         ) as fi:
             icon_to_send = base64.b64encode(fi.read())
