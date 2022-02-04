@@ -3,4 +3,5 @@
 from . import city
 from . import district
 from . import ward
-from . import partner_address
+from . import res_partner
+from . import res_country

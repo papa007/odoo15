@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "beanbakery_address",
+    'name': "Beanbakery VN Address",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -19,16 +19,19 @@
     'category': 'Application',
     'version': '0.1',
     "license": "LGPL-3",
+    "application": True,
+    "installable": True,
+    "images": ["static/description/icon.png"],
 
     # any module necessary for this one to work correctly
-    'depends': ['base','base_address_city'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/res_partner.xml',
-        #'views/views.xml',
-        #'views/templates.xml',
+        'views/res_city_view.xml',
+        'views/res_country_view.xml',
         'data/res.city.csv',
         'data/res.country.district.csv',
         'data/res.country.ward.csv'

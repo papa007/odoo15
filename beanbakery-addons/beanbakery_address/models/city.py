@@ -6,19 +6,8 @@ from odoo import api, fields, models
 
 class City(models.Model):
     _name = 'res.city'
-    _inherit="res.city"
     _description = 'City'
     _order = 'name'
-
-    name = fields.Char("Name", required=True, translate=True)
-    code = fields.Char(string="City Code",help='The City code.', required=True)
-    slug = fields.Char(string="City Code ID")
-    state_id = fields.Many2one(
-        'res.country.state', 'State', domain="[('country_id', '=', country_id)]")
-    country_id = fields.Many2one('res.country', string='Country', required=True)
-    zipcode = fields.Char("Zip")
-    
-    
 
     def name_get(self):
         res = []
@@ -35,4 +24,11 @@ class City(models.Model):
             args += ['|', (self._rec_name, operator, name), ('zipcode', operator, name)]
         return self._search(args, limit=limit, access_rights_uid=name_get_uid)
 
+    name = fields.Char("Name", required=True, translate=True)
+    code = fields.Char(string="City Code",help='The City code.', required=True)
+    slug = fields.Char(string="City Code ID")
+    state_id = fields.Many2one(
+        'res.country.state', 'State',domain="[('country_id', '=', country_id)]")
+    country_id = fields.Many2one('res.country', string='Country', required=True, )
+    zipcode = fields.Char("Zip")
     

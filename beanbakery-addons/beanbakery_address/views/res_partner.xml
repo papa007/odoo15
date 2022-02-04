@@ -8,14 +8,15 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
            
-            <field name="state_id" position="after">
-                
-            
-                    <field name="district_id" options='{"no_open": True}' class="oe_edit_only"/>
-                
-                    <field name="ward_id" options='{"no_open": True}' class="oe_edit_only"/>
-              
+            <field name="state_id" position="attributes"> 
+                <attribute name="class">oe_edit_only</attribute>
+                <attribute name="options">{"no_open": True}</attribute>
             </field>
-        </field>
+            <field name="zip" position="attributes"> 
+                <attribute name="class">oe_edit_only</attribute>
+                <attribute name="options">{"no_open": True}</attribute>
+            </field>
+            
+        </field> 
     </record>
 </odoo>
