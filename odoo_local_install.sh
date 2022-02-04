@@ -1,0 +1,1 @@
+./beanbakery-venv/bin/python3 ./odoo-bin -c ./config/odoo_local.conf  --without-demo=all -d beanbakery15 -i base,contacts,website,website_sale,sale_management,sale_coupon,purchase,mrp,coupon,gift_card,im_livechat,pos_restaurant,pos_coupon,pos_discount,board,calendar,bean_bakery_module,beanbakery_address

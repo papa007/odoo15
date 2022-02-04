@@ -1,1 +1,1 @@
-./beanbakery-venv/bin/python3 ./odoo-bin -c ./config/odoo_local.conf -d beanbakery15
+./beanbakery-venv/bin/python3 ./odoo-bin -c ./config/odoo_local.conf -d beanbakery15 -u bean_bakery_module
