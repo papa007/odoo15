@@ -26,37 +26,37 @@
     # for the full list
     'category': 'Appication',
     'version': '0.1',
+    "application": True,
+    "installable": True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base','website','sale','web_responsive','beanbakery_pwa','beanbakery_address'],
+    'depends': ['base','website','mail','sale','web_responsive','beanbakery_address','l10n_vn'],
+
+    "images": ["static/description/icon.png"],
 
     # always loaded
     'data': [
         # 'views/demo_library/templates.xml',
         'views/widgets/backend/qr_widget/template.xml',
         'views/product/product.xml',
-        #'views/vn_address/res_partner.xml',
+        'templates/pwa_manifest_assets.xml',
+        'views/pwa/res_pwa_configs.xml',
         'views/sale_order/sale_order.xml',
+        'views/vn_address/res_company_info.xml',
         'views/invoiceQR/invoice_template.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
-        #'data/vn_address/res.country.city.csv',
-        #'data/vn_address/res.country.district.csv',
-        #'data/vn_address/res.country.ward.csv'
        
         
     ],
     'assets': {
         'web.assets_backend': [
-            'pos_address/static/src/js/yourjs.js',
+            "/bean_bakery_module/static/src/pwa/webclient.js",
         ],
     },
     # only loaded in demonstration mode
     'demo': [
          #'data/master_data.xml'
-        'data/vn_address/res.country.city.csv',
-        'data/vn_address/res.country.district.csv',
-        'data/vn_address/res.country.ward.csv'
     ],
     
 }
