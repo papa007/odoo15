@@ -8,10 +8,13 @@ class District(models.Model):
     _description = "District"
     _order = "code"
     
+    name = fields.Char('District name', translate=True)
     code = fields.Char(string="District Code",help='The District code.', required=True)
     slug = fields.Char(string="District Code ID")
-    city_id = fields.Many2one(comodel_name='res.city',string='parent_city')
-    name = fields.Char('District name', translate=True)
+    city_id = fields.Many2one(comodel_name='res.city',string='City',domain="[('state_id', '=', state_id)]")
+    state_id = fields.Many2one(
+        'res.country.state', 'State',domain="[('country_id', '=', country_id)]")
+    country_id = fields.Many2one('res.country', string='Country', required=True, )
     zipcode = fields.Char(string='Zipcode',default='700000')
    
     

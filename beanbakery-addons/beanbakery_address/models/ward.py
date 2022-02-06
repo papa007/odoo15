@@ -5,9 +5,14 @@ class Ward(models.Model):
     _description = 'ward'
     _order = 'name'
 
-    name = fields.Char("Ward name", translate=True)
+    
     code = fields.Char(string="Ward Code")
     slug = fields.Char(string="Ward Code ID")
-    district_id = fields.Many2one('res.country.district', string='District')
+    name = fields.Char("Ward name", translate=True)
+    district_id = fields.Many2one('res.country.district', string='District',domain="[('city_id', '=', city_id)]")
+    city_id = fields.Many2one(comodel_name='res.city',string='City',domain="[('state_id', '=', state_id)]")
+    state_id = fields.Many2one(
+        'res.country.state', 'State',domain="[('country_id', '=', country_id)]")
+    country_id = fields.Many2one('res.country', string='Country', required=True, )
     zipcode = fields.Char(string='Zipcode',default='700000')
     
